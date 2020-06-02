@@ -78,7 +78,7 @@ For changing routing edit syslog_worker:route(Ip,App,Sev) function and recompile
 
 TODO
 
-0) Use pg module for distribution
+0) Use for queues global naming and separated nodes
 1) Different backends for store events in REST Databases;
 2) Changing syslog routing rules on fly;
 3) Changing logging level on fly 
