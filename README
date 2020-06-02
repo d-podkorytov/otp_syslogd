@@ -49,7 +49,7 @@ None, just pure Erlang OTP.
    
 COMPILE
 
-$make || (cd src && erl -make && mv *.beam ../ebin && cp *.app ../ebin)
+$erl -make
 
 RUN 
 
