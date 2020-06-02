@@ -49,21 +49,25 @@ None, just pure Erlang OTP.
    
 COMPILE
 
-$erl -make
+$make || erl -make
+$chmod +x *.sh
 
 RUN 
 
-1) For first run workers nodes inside separated erl's.
+1) For first run workers nodes inside separated terminal sessions.
 
 $workers_1.sh
 
 $workers_1.sh
 
-2) Run syslog daemons inside listeners erl's
+2) Run syslog daemon inside separated terminal too.
+   for working on syslog port 514 will needs root's permisions.
     
-#syslogd_1.sh 
+$sudo syslogd_1.sh 
 
 TESTS
+
+Inside some active erl session type:
 
 1>sysloger:test(). Test for first single message testing.
 2>sysloger:tests(). Test for set of mesages and cheching they routing.
