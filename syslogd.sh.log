@@ -1,0 +1,170 @@
+[[{'syslog@de.de',["Wed 27 May 2020 12:12:07 AM PDT\n"]}]]
+=CRITICAL REPORT==== 27-May-2020::00:12:07.223471 ===
+    point: #{function_name => "syslogd_sup:init/0",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd_sup,39},
+             node => 'syslog@de.de',pid => <0.88.0>}
+    queues: [{syslog_queue_1,{syslog_queue,start_link,[1]},
+                             permanent,5000,worker,
+                             [syslog_queue_1]},
+             {syslog_queue_2,{syslog_queue,start_link,[2]},
+                             permanent,5000,worker,
+                             [syslog_queue_2]}]
+Eshell V10.4  (abort with ^G)
+[{192,168,8,101}]-'syslog@de.de'-"/root/w/syslogs_pool/OTP_Syslog/pool.src">=CRITICAL REPORT==== 27-May-2020::00:12:07.490821 ===
+    mfa: {syslog_workers,start_link,[1]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.89.0>}
+    reason: {rpc_call,'workers_2@de.de',syslog_workers,start_link,[1]}
+    result: <8749.119.0>
+    rpc_at_node: 'workers_2@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.524130 ===
+    mfa: {syslog_workers,start_link,[2]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.89.0>}
+    reason: {rpc_call,'workers_1@de.de',syslog_workers,start_link,[2]}
+    result: <8748.120.0>
+    rpc_at_node: 'workers_1@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.527839 ===
+    mfa: {syslog_workers,start_link,[3]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.89.0>}
+    reason: {rpc_call,'workers_2@de.de',syslog_workers,start_link,[3]}
+    result: <8749.121.0>
+    rpc_at_node: 'workers_2@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.531001 ===
+    mfa: {syslog_workers,start_link,[4]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.89.0>}
+    reason: {rpc_call,'workers_2@de.de',syslog_workers,start_link,[4]}
+    result: <8749.123.0>
+    rpc_at_node: 'workers_2@de.de'
+sysloger:68 "May 27 7:12:7 UTC: " #{local_time => {{2020,5,27},{0,12,7}},
+                                    node => 'syslog@de.de',pid => <0.87.0>,
+                                    point =>
+                                        #{function_name =>
+                                              "sysloger:started/0",
+                                          local_time => {{2020,5,27},{0,12,7}},
+                                          module_line => {sysloger,34},
+                                          node => 'syslog@de.de',
+                                          pid => <0.87.0>},
+                                    reason => started} 
+=CRITICAL REPORT==== 27-May-2020::00:12:07.546869 ===
+    ask: {badarg,[{syslog_queue,do,2,[{file,"syslog_queue.erl"},{line,106}]},
+                  {syslog_queue,handle_info,2,
+                                [{file,"syslog_queue.erl"},{line,83}]},
+                  {gen_server,try_dispatch,4,
+                              [{file,"gen_server.erl"},{line,637}]},
+                  {gen_server,handle_msg,6,
+                              [{file,"gen_server.erl"},{line,711}]},
+                  {proc_lib,init_p_do_apply,3,
+                            [{file,"proc_lib.erl"},{line,249}]}]}
+    point: #{function_name => "syslog_queue:terminate/2",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslog_queue,87},
+             node => 'syslog@de.de',pid => <0.102.0>}
+    reason: terminate
+    state: #{pid => <0.102.0>}
+=ERROR REPORT==== 27-May-2020::00:12:07.575763 ===
+** Generic server syslog_queue_1 terminating 
+** Last message in was {udp,#Port<0.22>,
+                            {127,0,0,1},
+                            50891,
+                            <<"<9> May 27 7:12:7 UTC:  #{local_time => {{2020,5,27},{0,12,7}},\n                          node => 'syslog@de.de',pid => <0.87.0>,\n                          point =>\n                              #{function_name => \"sysloger:started/0\",\n                                local_time => {{2020,5,27},{0,12,7}},\n                                module_line => {sysloger,34},\n                                node => 'syslog@de.de',pid => <0.87.0>},\n                          reason => started} \n">>}
+** When Server state == #{pid => <0.102.0>}
+** Reason for termination ==
+** {badarg,[{syslog_queue,do,2,[{file,"syslog_queue.erl"},{line,106}]},
+            {syslog_queue,handle_info,2,[{file,"syslog_queue.erl"},{line,83}]},
+            {gen_server,try_dispatch,4,[{file,"gen_server.erl"},{line,637}]},
+            {gen_server,handle_msg,6,[{file,"gen_server.erl"},{line,711}]},
+            {proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+
+=CRASH REPORT==== 27-May-2020::00:12:07.577713 ===
+  crasher:
+    initial call: syslog_queue:init/1
+    pid: <0.102.0>
+    registered_name: syslog_queue_1
+    exception error: bad argument
+      in function  syslog_queue:do/2 (syslog_queue.erl, line 106)
+      in call from syslog_queue:handle_info/2 (syslog_queue.erl, line 83)
+      in call from gen_server:try_dispatch/4 (gen_server.erl, line 637)
+      in call from gen_server:handle_msg/6 (gen_server.erl, line 711)
+    ancestors: [syslogd_sup,<0.87.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.88.0>]
+    dictionary: [{rand_seed,{#{bits => 58,jump => #Fun<rand.21.53802439>,
+                                next => #Fun<rand.18.53802439>,type => exsss,
+                                uniform => #Fun<rand.19.53802439>,
+                                uniform_n => #Fun<rand.20.53802439>},
+                              [202521608105159495|42591619720289600]}}]
+    trap_exit: false
+    status: running
+    heap_size: 4185
+    stack_size: 27
+    reductions: 17120
+  neighbours:
+
+=SUPERVISOR REPORT==== 27-May-2020::00:12:07.596961 ===
+    supervisor: {local,syslogd_sup}
+    errorContext: child_terminated
+    reason: {badarg,[{syslog_queue,do,2,
+                                   [{file,"syslog_queue.erl"},{line,106}]},
+                     {syslog_queue,handle_info,2,
+                                   [{file,"syslog_queue.erl"},{line,83}]},
+                     {gen_server,try_dispatch,4,
+                                 [{file,"gen_server.erl"},{line,637}]},
+                     {gen_server,handle_msg,6,
+                                 [{file,"gen_server.erl"},{line,711}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,249}]}]}
+    offender: [{pid,<0.102.0>},
+               {id,syslog_queue_1},
+               {mfargs,{syslog_queue,start_link,[1]}},
+               {restart_type,permanent},
+               {shutdown,5000},
+               {child_type,worker}]
+=CRITICAL REPORT==== 27-May-2020::00:12:07.666127 ===
+    mfa: {syslog_workers,start_link,[1]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.105.0>}
+    reason: {rpc_call,'workers_2@de.de',syslog_workers,start_link,[1]}
+    result: <8749.126.0>
+    rpc_at_node: 'workers_2@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.668634 ===
+    mfa: {syslog_workers,start_link,[2]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.105.0>}
+    reason: {rpc_call,'workers_2@de.de',syslog_workers,start_link,[2]}
+    result: <8749.128.0>
+    rpc_at_node: 'workers_2@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.671813 ===
+    mfa: {syslog_workers,start_link,[3]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.105.0>}
+    reason: {rpc_call,'workers_1@de.de',syslog_workers,start_link,[3]}
+    result: <8748.122.0>
+    rpc_at_node: 'workers_1@de.de'
+=CRITICAL REPORT==== 27-May-2020::00:12:07.674140 ===
+    mfa: {syslog_workers,start_link,[4]}
+    point: #{function_name => "syslogd:do_spawn/4",
+             local_time => {{2020,5,27},{0,12,7}},
+             module_line => {syslogd,128},
+             node => 'syslog@de.de',pid => <0.105.0>}
+    reason: {rpc_call,'workers_1@de.de',syslog_workers,start_link,[4]}
+    result: <8748.124.0>
+    rpc_at_node: 'workers_1@de.de'
