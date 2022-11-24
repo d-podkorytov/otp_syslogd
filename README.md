@@ -1,4 +1,4 @@
-# ERLANG OTP SYSLOG DAEMON 
+# Erlang OTP Syslog Daemon 
 
 Scalable syslog daemon for Erlang OTP cluster with routing at syslog protocol level 
 by client IP, and syslogs Application and severity ID parts of tagged syslog message,
@@ -6,7 +6,7 @@ optionnaly message might be routed by it's text content.
 Also it can accumulate and handle statistics of working listeners, queues
 and workers.
 
-## ARCHITECTURE
+## Architecture
 
 Workers live inside separate VMs, named like 'workers_1@host.com' or for common case 'worker*'.
 
@@ -42,17 +42,13 @@ made port redirection 514 -> 10514 for avoid of working listeners by root permis
 
 All incoming messages inside workers will be show as looger:critical/1 call by reason of demo mode and
 currently do not have and backends or plugins for handling it.
-
-## DEPENDENICIES
-
-None, just pure Erlang OTP. 
    
-COMPILE
+## Compilation
 
 $make || erl -make
 $chmod +x *.sh
 
-## RUN 
+## Run 
 
 1) For first run workers nodes inside separated terminal sessions.
 
@@ -65,7 +61,7 @@ $workers_1.sh
     
 $sudo syslogd_1.sh 
 
-## TESTS
+## Tests
 
 Inside some active erl session type:
 
@@ -85,7 +81,7 @@ For changing routing edit syslog_worker:route(Ip,App,Sev) function and recompile
 4) Chande working code on fly
 5) Workers on some set of nodes (It allready done)
 
-## HASH TAGS
+## Hash Tags
 
 #erlang_syslog_demo
 #Dmitrii_Podkorytov 
@@ -101,7 +97,7 @@ For changing routing edit syslog_worker:route(Ip,App,Sev) function and recompile
 #learn_erlang 
 
 
-## GET WORKING METRICS
+## Get Working Metrics
 
 Gor getting statistics data collections use function 'syslog_stat:info().' or more complex
 'syslog_stat:all().'
