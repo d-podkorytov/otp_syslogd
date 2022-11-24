@@ -1,4 +1,4 @@
-# GOAL
+# ERLANG OTP SYSLOG DAEMON 
 
 Scalable syslog daemon for Erlang OTP cluster with routing at syslog protocol level 
 by client IP, and syslogs Application and severity ID parts of tagged syslog message,
