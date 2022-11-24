@@ -1,4 +1,4 @@
-GOAL
+# GOAL
 
 Scalable syslog daemon for Erlang OTP cluster with routing at syslog protocol level 
 by client IP, and syslogs Application and severity ID parts of tagged syslog message,
@@ -6,7 +6,7 @@ optionnaly message might be routed by it's text content.
 Also it can accumulate and handle statistics of working listeners, queues
 and workers.
 
-ARCHITECTURE
+## ARCHITECTURE
 
 Workers live inside separate VMs, named like 'workers_1@host.com' or for common case 'worker*'.
 
@@ -43,7 +43,7 @@ made port redirection 514 -> 10514 for avoid of working listeners by root permis
 All incoming messages inside workers will be show as looger:critical/1 call by reason of demo mode and
 currently do not have and backends or plugins for handling it.
 
-DEPENDENICIES
+## DEPENDENICIES
 
 None, just pure Erlang OTP. 
    
@@ -52,7 +52,7 @@ COMPILE
 $make || erl -make
 $chmod +x *.sh
 
-RUN 
+## RUN 
 
 1) For first run workers nodes inside separated terminal sessions.
 
@@ -65,7 +65,7 @@ $workers_1.sh
     
 $sudo syslogd_1.sh 
 
-TESTS
+## TESTS
 
 Inside some active erl session type:
 
@@ -76,7 +76,7 @@ CHANGE SYSLOG ROUTING RULES
 
 For changing routing edit syslog_worker:route(Ip,App,Sev) function and recompile this module
 
-TODO
+## TODO
 
 0) Use for queues global naming and separated nodes
 1) Different backends for store events in REST Databases;
@@ -85,7 +85,7 @@ TODO
 4) Chande working code on fly
 5) Workers on some set of nodes (It allready done)
 
-HASH TAGS
+## HASH TAGS
 
 #erlang_syslog_demo
 #Dmitrii_Podkorytov 
@@ -101,7 +101,7 @@ HASH TAGS
 #learn_erlang 
 
 
-GET WORKINg METRICS
+## GET WORKING METRICS
 
 Gor getting statistics data collections use function 'syslog_stat:info().' or more complex
 'syslog_stat:all().'
